@@ -17,7 +17,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarQube') {
                     bat '''
-                        mvn verify sonar:sonar ^
+                        mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar ^
                         -Dsonar.projectKey=sast-demo ^
                         -Dsonar.projectName=SAST-Demo
                     '''
